@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>如何将域名从 Godaddy 转移到 Cloudflare | GPT教程</title><meta name="author" content="Duan"><meta name="copyright" content="Duan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="背景：Godaddy 域名续费需要 159&#x2F;年，相比较之下 CloudFlare 域名续费就便宜很多，正好有个域名到了该续费的时间，所以打算先将其转移到 CloudFlare 再进行续费。 步骤：一、转移DNS配置 登陆 https:&#x2F;&#x2F;dash.cloudflare.com 选择添加域，将域名添加至 Cloudflare   添加后会自动读取现有DNS配置并自动添加到 Cloudfla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何将域名从 Godaddy 转移到 Cloudflare">
+<meta property="og:url" content="http://duanduanhh.github.io/how-to-transfer-domain-from-Godaddy-to-Cloudflare/index.html">
+<meta property="og:site_name" content="GPT教程">
+<meta property="og:description" content="背景：Godaddy 域名续费需要 159&#x2F;年，相比较之下 CloudFlare 域名续费就便宜很多，正好有个域名到了该续费的时间，所以打算先将其转移到 CloudFlare 再进行续费。 步骤：一、转移DNS配置 登陆 https:&#x2F;&#x2F;dash.cloudflare.com 选择添加域，将域名添加至 Cloudflare   添加后会自动读取现有DNS配置并自动添加到 Cloudfla">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt/panda.jpg">
+<meta property="article:published_time" content="2025-01-04T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-04T10:39:48.632Z">
+<meta property="article:author" content="Duan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt/panda.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://duanduanhh.github.io/how-to-transfer-domain-from-Godaddy-to-Cloudflare/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="googleb907d6702da2d7ce.html"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-8728984294301804',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3ae43350b6efd1381706a35cc875119f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '如何将域名从 Godaddy 转移到 Cloudflare',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-04 18:39:48'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt/panda.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-comments"></i><span> GPT</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/how-to-upgrade-GPT4/"><span> 如何升级GPT4</span></a></li><li><a class="site-page child" href="/how-to-access-chatgpt-in-china/"><span> 如何免梯子访问GPT</span></a></li><li><a class="site-page child" href="/chatgpt-authenticate-solution/"><span> 解决拒绝支付问题</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> Onlyfans</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/how-to-subscribe-to-onlyfans/"><span> 如何订阅Onlyfans</span></a></li><li><a class="site-page child" href="/how-to-solve-onlyfans-age-verification/"><span> 解决年龄验证问题</span></a></li><li><a class="site-page child" href="/onlyfans-verification-solution/"><span> 解决绑定失败问题</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-palette"></i><span> Midjourney</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/how-to-subscribe-to-midjourney/"><span> 如何订阅Midjourneys</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="GPT教程"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-comments"></i><span> GPT</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/how-to-upgrade-GPT4/"><span> 如何升级GPT4</span></a></li><li><a class="site-page child" href="/how-to-access-chatgpt-in-china/"><span> 如何免梯子访问GPT</span></a></li><li><a class="site-page child" href="/chatgpt-authenticate-solution/"><span> 解决拒绝支付问题</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> Onlyfans</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/how-to-subscribe-to-onlyfans/"><span> 如何订阅Onlyfans</span></a></li><li><a class="site-page child" href="/how-to-solve-onlyfans-age-verification/"><span> 解决年龄验证问题</span></a></li><li><a class="site-page child" href="/onlyfans-verification-solution/"><span> 解决绑定失败问题</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-palette"></i><span> Midjourney</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/how-to-subscribe-to-midjourney/"><span> 如何订阅Midjourneys</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">如何将域名从 Godaddy 转移到 Cloudflare</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-04T10:00:00.000Z" title="发表于 2025-01-04 18:00:00">2025-01-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-04T10:39:48.632Z" title="更新于 2025-01-04 18:39:48">2025-01-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="如何将域名从 Godaddy 转移到 Cloudflare"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><strong>背景：</strong>Godaddy 域名续费需要 159&#x2F;年，相比较之下 CloudFlare 域名续费就便宜很多，正好有个域名到了该续费的时间，所以打算先将其转移到 CloudFlare 再进行续费。</p>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a><strong>步骤：</strong></h2><h3 id="一、转移DNS配置"><a href="#一、转移DNS配置" class="headerlink" title="一、转移DNS配置"></a><strong>一、转移DNS配置</strong></h3><ol>
+<li><p>登陆 <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">https://dash.cloudflare.com</a> 选择添加域，将域名添加至 Cloudflare</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104173416848.png" alt="image-20250104173416848"></p>
+</li>
+<li><p>添加后会自动读取现有DNS配置并自动添加到 Cloudflare，提示如下，一路继续</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104171247929.png" alt="image-20250104171247929"></p>
+</li>
+<li><p>DNS配置后会提示让你去 Godaddy 更换名称服务器，这时记录下提示的域名服务器，然后开始转移域名服务器</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104171617020.png" alt="image-20250104171617020"></p>
+</li>
+</ol>
+<h3 id="二、转移域名服务器"><a href="#二、转移域名服务器" class="headerlink" title="二、转移域名服务器"></a><strong>二、转移域名服务器</strong></h3><ol>
+<li><p>登陆 Godaddy  <a target="_blank" rel="noopener" href="https://dcc.godaddy.com/">https://dcc.godaddy.com/</a> ，选择要转移的域名，设置域名服务器，填入 Cloudflare 提示的域名服务器</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104171552943.png" alt="image-20250104171552943"></p>
+</li>
+<li><p>保存后前往 Cloudflare，查看域状态，为活动则代表转移成功，然后开始转移域名</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104172209564.png" alt="image-20250104172209564"></p>
+</li>
+</ol>
+<h3 id="三、转移域名"><a href="#三、转移域名" class="headerlink" title="三、转移域名"></a>三、转移域名</h3><ol>
+<li><p>登陆 Godaddy，点击带转移的域名</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104170618809.png" alt="image-20250104170618809"></p>
+</li>
+<li><p>选择转移到另一个注册商</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104170646605.png" alt="image-20250104170646605"></p>
+</li>
+<li><p>一路继续，然后会给你弹出转移授权码，记录授权码，等下会在 CLoudflare 用到</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104170806717.png" alt="image-20250104170806717"></p>
+</li>
+<li><p>登陆 Cloudflare，点击转移域，一路点击继续，域名转移一般需要再续费一年，可以看出这里续费需要 80 RMB，但是在 Godaddy 续费需要 159 RMB，所以选择在 Cloudflare 续费还是十分划算的</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104172317416.png" alt="image-20250104172317416"></p>
+</li>
+<li><p>将 Godaddy 提供的授权码复制进去，然后点击确认</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104172412236_%E5%89%AF%E6%9C%AC.png" alt="image-20250104172412236_副本"></p>
+</li>
+<li><p>最后一步，需要提供扣款卡信息，然后就开始转移了，这里要用国外的卡，国内的卡是无法进行扣款的。我这里用的是虚拟卡，虚拟卡注册地址我放在文末，有需要的话可以使用，开通后将虚拟卡信息填到对应栏目就可以。</p>
+<p><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt-boot/image-20250104172925951.png" alt="image-20250104172925951"></p>
+</li>
+</ol>
+<p><strong>虚拟卡注册地址：<a target="_blank" rel="noopener" href="https://bewildcard.com/i/GPT5">https://bewildcard.com/i/GPT5</a></strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://duanduanhh.github.io">Duan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://duanduanhh.github.io/how-to-transfer-domain-from-Godaddy-to-Cloudflare/">http://duanduanhh.github.io/how-to-transfer-domain-from-Godaddy-to-Cloudflare/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://duanduanhh.github.io" target="_blank">GPT教程</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt/panda.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/how-to-solve-onlyfans-age-verification/" title="一文解决Onlyfans年龄验证问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一文解决Onlyfans年龄验证问题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt/panda.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Duan</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">提供GPT3.5账号购买、GPT4代充、Onlyfans代订阅服务, 有需求可联系站长个人微信(nauDnauD)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BD%AC%E7%A7%BBDNS%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">一、转移DNS配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BD%AC%E7%A7%BB%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">二、转移域名服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BD%AC%E7%A7%BB%E5%9F%9F%E5%90%8D"><span class="toc-number">1.3.</span> <span class="toc-text">三、转移域名</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/how-to-transfer-domain-from-Godaddy-to-Cloudflare/" title="如何将域名从 Godaddy 转移到 Cloudflare">如何将域名从 Godaddy 转移到 Cloudflare</a><time datetime="2025-01-04T10:00:00.000Z" title="发表于 2025-01-04 18:00:00">2025-01-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/how-to-solve-onlyfans-age-verification/" title="一文解决Onlyfans年龄验证问题">一文解决Onlyfans年龄验证问题</a><time datetime="2024-03-03T12:00:00.000Z" title="发表于 2024-03-03 20:00:00">2024-03-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/chatgpt-authenticate-solution/" title="ChatGPT 升级出现「we are unable to authenticate」怎么办？">ChatGPT 升级出现「we are unable to authenticate」怎么办？</a><time datetime="2024-02-28T12:00:00.000Z" title="发表于 2024-02-28 20:00:00">2024-02-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/how-to-access-chatgpt-in-china/" title="手把手教学在国内如何免魔法使用ChatGPT">手把手教学在国内如何免魔法使用ChatGPT</a><time datetime="2024-02-23T12:00:00.000Z" title="发表于 2024-02-23 20:00:00">2024-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/how-to-use-sora/" title="Sora账号申请教程">Sora账号申请教程</a><time datetime="2024-02-18T12:00:00.000Z" title="发表于 2024-02-18 20:00:00">2024-02-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By Duan</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
