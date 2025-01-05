@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://duanduanhh.github.io/how-to-deploy-on-Vercel/</loc>
+    <lastmod>2025-01-05</lastmod>
+  </url>
+  <url>
     <loc>http://duanduanhh.github.io/how-to-solve-too-many-relocations-in-Cloudflare/</loc>
     <lastmod>2025-01-05</lastmod>
   </url>
